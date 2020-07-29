@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'product_item.dart';
 
-import '../models/product.dart';
+import '../providers/product_provider.dart';
 import '../providers/products_provider.dart';
 
 class ProductsGrid extends StatelessWidget {
@@ -18,10 +18,13 @@ class ProductsGrid extends StatelessWidget {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10),
       itemBuilder: (ctx, i) {
-        return ProductItem(
-          id: products[i].id,
-          title: products[i].title,
-          imageUrl: products[i].imageUrl,
+        return ChangeNotifierProvider(
+          create: (ctx) => products[i],
+          child: ProductItem(
+              // id: products[i].id,
+              // title: products[i].title,
+              // imageUrl: products[i].imageUrl,
+              ),
         );
       },
       itemCount: products.length,
