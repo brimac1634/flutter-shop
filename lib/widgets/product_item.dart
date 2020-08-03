@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 
 import '../pages/product_detail_page.dart';
 
-import '../providers/product_provider.dart';
-import '../providers/cart_provider.dart';
+import '../providers/product.dart';
+import '../providers/cart.dart';
 
 class ProductItem extends StatelessWidget {
   // final String id;

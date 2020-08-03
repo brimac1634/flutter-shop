@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/cart_provider.dart' show Cart;
+import '../providers/cart.dart' show Cart;
 import '../widgets/cart_item.dart';
+import '../providers/orders.dart';
 
 class CartPage extends StatelessWidget {
   static const pathName = '/cart';
@@ -40,7 +41,11 @@ class CartPage extends StatelessWidget {
                   ),
                   FlatButton(
                     child: Text('ORDER NOW'),
-                    onPressed: () {},
+                    onPressed: () {
+                      Provider.of<Orders>(context, listen: false).addOrder(
+                          cart.items.values.toList(), cart.totalAmount);
+                      cart.clearCart();
+                    },
                     textColor: Theme.of(context).primaryColor,
                   )
                 ],
@@ -55,6 +60,7 @@ class CartPage extends StatelessWidget {
               itemBuilder: (ctx, i) {
                 return CartItem(
                   id: cart.items.values.toList()[i].id,
+                  productId: cart.items.keys.toList()[i],
                   price: cart.items.values.toList()[i].price,
                   quantity: cart.items.values.toList()[i].quantity,
                   title: cart.items.values.toList()[i].title,

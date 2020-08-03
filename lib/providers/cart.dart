@@ -52,4 +52,14 @@ class Cart with ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void removeItem(String id) {
+    _items.remove(id);
+    notifyListeners();
+  }
+
+  void clearCart() {
+    _items = {};
+    notifyListeners();
+  }
 }
