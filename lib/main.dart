@@ -5,6 +5,7 @@ import './pages/orders_page.dart';
 import './pages/cart_page.dart';
 import './pages/products_overview_pages.dart';
 import './pages/product_detail_page.dart';
+import './pages/user_products_page.dart';
 
 import 'providers/products.dart';
 import './providers/cart.dart';
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
           routes: {
             ProductDetailPage.pathName: (ctx) => ProductDetailPage(),
             CartPage.pathName: (ctx) => CartPage(),
-            OrdersPage.pathName: (ctx) => OrdersPage()
+            OrdersPage.pathName: (ctx) => OrdersPage(),
+            UserProductsPage.pathName: (ctx) => UserProductsPage(),
           }),
     );
   }
