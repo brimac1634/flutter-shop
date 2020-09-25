@@ -6,6 +6,7 @@ import './pages/cart_page.dart';
 import './pages/products_overview_pages.dart';
 import './pages/product_detail_page.dart';
 import './pages/user_products_page.dart';
+import './pages/edit_product_page.dart';
 
 import 'providers/products.dart';
 import './providers/cart.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
             CartPage.pathName: (ctx) => CartPage(),
             OrdersPage.pathName: (ctx) => OrdersPage(),
             UserProductsPage.pathName: (ctx) => UserProductsPage(),
+            EditProductPage.pathName: (ctx) => EditProductPage(),
           }),
     );
   }
