@@ -30,7 +30,7 @@ class UserProductsPage extends StatelessWidget {
         padding: EdgeInsets.all(8),
         child: ListView.builder(
           itemBuilder: (_, i) => Column(children: [
-            UserProductItem(
+            UserProductItem(productsData.items[i].id,
                 productsData.items[i].title, productsData.items[i].imageUrl),
             Divider()
           ]),
