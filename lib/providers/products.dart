@@ -64,9 +64,9 @@ class Products with ChangeNotifier {
   //   notifyListeners();
   // }
 
-  void addProduct(Product product) {
+  Future<void> addProduct(Product product) {
     const url = 'https://flutter-test-571c2.firebaseio.com/products.json';
-    http
+    return http
         .post(url,
             body: json.encode({
               'title': product.title,
@@ -85,7 +85,7 @@ class Products with ChangeNotifier {
 
       _items.add(newProduct);
       notifyListeners();
-    }).catchError((error) {});
+    });
   }
 
   void updateProduct(String id, Product product) {
